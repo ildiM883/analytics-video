@@ -1,4 +1,4 @@
-import { VideoState, PlayVideoAction, PauseVideoAction, SeekVideoAction, UpdateVideoTimeAction, SetVideoDurationAction } from '../../types/video.types';
+import { VideoState } from '../../types/video.types';
 import {
   PLAY_VIDEO,
   PAUSE_VIDEO,
@@ -13,14 +13,8 @@ const initialState: VideoState = {
   videoDuration: 0,
 };
 
-type VideoAction =
-  | PlayVideoAction
-  | PauseVideoAction
-  | SeekVideoAction
-  | UpdateVideoTimeAction
-  | SetVideoDurationAction;
 
-const videoReducer = (state = initialState, action: VideoAction): VideoState => {
+const videoReducer = (state = initialState, action: any): VideoState => {
   switch (action.type) {
     case PLAY_VIDEO:
       return {

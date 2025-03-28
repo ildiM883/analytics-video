@@ -1,4 +1,4 @@
-import { AnalyticsState, FetchAnalyticsFailureAction, FetchAnalyticsRequestAction, FetchAnalyticsSuccessAction, UpdateActiveEventsAction } from '../../types/analytics.types';
+import { AnalyticsState } from '../../types/analytics.types';
 import {
   FETCH_ANALYTICS_REQUEST,
   FETCH_ANALYTICS_SUCCESS,
@@ -13,13 +13,8 @@ const initialState: AnalyticsState = {
   activeEvents: [],
 };
 
-type AnalyticsAction =
-  | FetchAnalyticsRequestAction
-  | FetchAnalyticsSuccessAction
-  | FetchAnalyticsFailureAction
-  | UpdateActiveEventsAction;
 
-const analyticsReducer = (state = initialState, action: AnalyticsAction): AnalyticsState => {
+const analyticsReducer = (state = initialState, action: any): AnalyticsState => {
   switch (action.type) {
     case FETCH_ANALYTICS_REQUEST:
       return {
