@@ -1,54 +1,67 @@
-# React + TypeScript + Vite
+# Видеоаналитика с отображением событий
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это приложение для анализа видео с отображением временных меток и зон интереса, разработанное на React, TypeScript, Redux и Redux-Saga. Позволяет синхронизировать события аналитики с видеопотоком в реальном времени.
 
-Currently, two official plugins are available:
+### [Demo](https://analytics-video.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Основные функции
 
-## Expanding the ESLint configuration
+**1. Видеоплеер:**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Воспроизведение/пауза по клику
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Точная навигация по временной шкале
+
+- Отображение текущего времени в формате MM:SS:mmm
+
+**2. Визуализация аналитики:**
+
+- Зеленые прямоугольники для зон интереса
+
+- Одновременное отображение множества событий
+
+- Автоматическое скрытие по истечении duration
+
+**3. Список событий:**
+
+- Сортировка по времени возникновения
+
+- Форматированный вывод временных меток
+
+- Переход к моменту видео по клику
+
+## Технологии:
+
+- **React**
+- **TypeScript**
+- **Redux**
+- **Redux Saga**
+- **SCSS**
+- **React Testing Library**
+
+## Установка:
+
+### 1. Клонировать репозиторий
+
+```bash
+git clone https://github.com/ildiM883/analytics-video
+cd analytics-video
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Установить зависимости
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm i
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 3. Запустить приложение
+
+```bash
+npm run dev
+```
+
+## 4. Для запуска тестов
+
+```bash
+npm run test
 ```
